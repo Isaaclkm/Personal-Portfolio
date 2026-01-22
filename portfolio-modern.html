@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franklin Felix - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Franklin</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#data-science">Data Science</a></li>
+                <li>
+                    <div class="lang-switch">
+                        <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+                        <button class="lang-btn" onclick="switchLang('es')">ES</button>
+                        <button class="lang-btn" onclick="switchLang('zh')">中文</button>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>
+                <span data-lang="greeting">Hi, I'm</span> 
+                <span class="highlight">Franklin</span>
+            </h1>
+            <p class="subtitle" data-lang="subtitle">Software Developer & Data Scientist</p>
+            <p data-lang="heroDesc">
+                Computer Science major with experience in frontend and backend development using React, Next.js, HTML, CSS, C#, and PHP. My portfolio includes a dedicated Projects section showcasing real-world applications, as well as a Data Analysis/Data Science section where I work with datasets to uncover patterns, insights, and meaningful results.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary" data-lang="viewWork">View My Work →</a>
+                <a href="#contact" class="btn btn-secondary" data-lang="getInTouch">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="profile-wrapper">
+                <div class="profile-bg"></div>
+                <div class="profile-frame">
+                    <!-- Replace with your actual photo -->
+                    <!-- <img src="your-photo.jpg" alt="Franklin Felix" class="profile-picture"> -->
+                    
+                    <!-- Placeholder - Remove when adding photo -->
+                    <div class="profile-placeholder">👨‍💻</div>
+                </div>
+                <div class="floating-badge badge-1" data-lang="badge1">Full Stack</div>
+                <div class="floating-badge badge-2" data-lang="badge2">Data Science</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Software Projects Section -->
+    <section id="projects">
+        <div class="section-header">
+            <div class="section-tag" data-lang="projectsTag">PORTFOLIO</div>
+            <h2 class="section-title" data-lang="projectsTitle">Software Projects</h2>
+            <p class="section-description" data-lang="projectsDesc">
+                A collection of applications I've built using modern web technologies and frameworks.
+            </p>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- Data Science Section -->
+    <section id="data-science">
+        <div class="section-header">
+            <div class="section-tag" data-lang="dsTag">ANALYTICS</div>
+            <h2 class="section-title" data-lang="dsTitle">Data Science Lab</h2>
+            <p class="section-description" data-lang="dsDesc">
+                Exploring data through analysis, visualization, and machine learning projects.
+            </p>
+        </div>
+        <div class="ds-grid" id="dsGrid"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#data-science">Data Science</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p class="copyright">© 2026 Franklin Felix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Translations
+        const translations = {
+            en: {
+                greeting: "Hi, I'm",
+                subtitle: "Software Developer & Data Scientist",
+                heroDesc: "Computer Science major with experience in frontend and backend development using React, Next.js, HTML, CSS, C#, and PHP. My portfolio includes a dedicated Projects section showcasing real-world applications, as well as a Data Analysis/Data Science section where I work with datasets to uncover patterns, insights, and meaningful results.",
+                viewWork: "View My Work →",
+                getInTouch: "Get in Touch",
+                badge1: "Full Stack",
+                badge2: "Data Science",
+                projectsTag: "PORTFOLIO",
+                projectsTitle: "Software Projects",
+                projectsDesc: "A collection of applications I've built using modern web technologies and frameworks.",
+                dsTag: "ANALYTICS",
+                dsTitle: "Data Science Lab",
+                dsDesc: "Exploring data through analysis, visualization, and machine learning projects.",
+                viewProject: "View Project →",
+                viewNotebook: "View Notebook →",
+                techStack: "Tech Stack"
+            },
+            es: {
+                greeting: "Hola, soy",
+                subtitle: "Desarrollador de Software y Científico de Datos",
+                heroDesc: "Estudiante en Ciencias de la Computación con experiencia en desarrollo frontend y backend con React, Next.js, HTML, CSS, C# y PHP. Mi portafolio incluye una sección dedicada a Proyectos que muestra aplicaciones del mundo real, así como una sección de Análisis de Datos/Ciencia de Datos donde trabajo con conjuntos de datos para descubrir patrones, información y resultados significativos.",
+                viewWork: "Ver Mi Trabajo →",
+                getInTouch: "Contactar",
+                badge1: "Full Stack",
+                badge2: "Ciencia de Datos",
+                projectsTag: "PORTAFOLIO",
+                projectsTitle: "Proyectos de Software",
+                projectsDesc: "Una colección de aplicaciones que he construido usando tecnologías web modernas.",
+                dsTag: "ANÁLISIS",
+                dsTitle: "Laboratorio de Ciencia de Datos",
+                dsDesc: "Explorando datos a través de análisis, visualización y proyectos de aprendizaje automático.",
+                viewProject: "Ver Proyecto →",
+                viewNotebook: "Ver Notebook →",
+                techStack: "Tecnologías"
+            },
+            zh: {
+                greeting: "你好，我是",
+                subtitle: "软件开发者和数据科学家",
+                heroDesc: "计算机科学专业，拥有丰富的前端和后端开发经验，熟练运用 React、Next.js、HTML、CSS、C# 和 PHP 等技术。我的作品集包含一个专门的项目展示部分，用于展示实际应用案例；此外，还有一个数据分析/数据科学展示部分，用于分析数据集，挖掘其中的模式、洞见和有意义的结果。",
+                viewWork: "查看作品 →",
+                getInTouch: "联系我",
+                badge1: "全栈开发",
+                badge2: "数据科学",
+                projectsTag: "作品集",
+                projectsTitle: "软件开发项目",
+                projectsDesc: "使用现代网络技术和框架构建的应用程序集合。",
+                dsTag: "分析",
+                dsTitle: "数据科学实验室",
+                dsDesc: "通过分析、可视化和机器学习项目探索数据。",
+                viewProject: "查看项目 →",
+                viewNotebook: "查看 Notebook →",
+                techStack: "技术栈"
+            }
+        };
+
+        // Projects Data
+        const projects = [
+            {
+                title: "Employee Management System",
+                desc: "A comprehensive CRUD application built with C# WinForms for managing employee records, departments, and organizational data.",
+                icon: "🏢",
+                link: "#",
+                tools: ["C#", "WinForms", "SQL Server"]
+            },
+            {
+                title: "Cinema API",
+                desc: "RESTful API built with Next.js enabling movie ticket bookings with integrated Stripe payment processing.",
+                icon: "🎬",
+                link: "",
+                tools: ["Next.js", "Stripe", "Node.js"]
+            },
+            {
+                title: "E-Commerce Platform",
+                desc: "Full-stack e-commerce solution with product catalog, shopping cart, and secure payment integration using Stripe.",
+                icon: "🛒",
+                link: "#",
+                tools: ["Next.js", "React", "Stripe", "MongoDB"]
+            }
+        ];
+
+        const dsProjects = [
+            {
+                title: "Tsunami Prediction Model",
+                platform: "Kaggle",
+                tool: "Python/Scikit-Learn",
+                link: "https://www.kaggle.com/code/franklinfelix/tsunami-prediction-model"
+            },
+            {
+                title: "Coca Cola Dashboard",
+                platform: "Excel",
+                tool: "Excel Analytics",
+                link: "https://github.com/Isaaclkm/DietCoke-Excel-Dashboard-Analysis/blob/main/README.md"
+            },
+            {
+                title: "GDP Economic Analysis",
+                platform: "Kaggle",
+                tool: "Python/Pandas",
+                link: "https://www.kaggle.com/code/franklinfelix/gdp-eda"
+            },
+            {
+                title: "Car Sales Dashboard",
+                platform: "Power BI",
+                tool: "Power BI",
+                link: "https://github.com/Isaaclkm/Car_sales_dashboard/blob/main/README.md"
+            },
+            {
+                title: "Crocodile Population EDA",
+                platform: "Kaggle",
+                tool: "Python/Matplotlib",
+                link: "https://github.com/Isaaclkm/Car_sales_dashboard/blob/main/README.md"
+            }
+        ];
+
+        let currentLang = 'en';
+
+        // Language Switcher
+        function switchLang(lang) {
+            currentLang = lang;
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            renderProjects();
+        }
+
+        // Render Projects
+        function renderProjects() {
+            const t = translations[currentLang];
+            
+            // Software Projects
+            const projectsGrid = document.getElementById('projectsGrid');
+            projectsGrid.innerHTML = projects.map(project => `
+                <div class="project-card">
+                    <div class="project-icon">${project.icon}</div>
+                    <div class="project-content">
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-desc">${project.desc}</p>
+                        <div class="project-tags">
+                            ${project.tools.map(tool => `<span class="tag">${tool}</span>`).join('')}
+                        </div>
+                        ${project.link ? `
+                            <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">
+                                ${t.viewProject}
+                            </a>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+
+            // Data Science Projects
+            const dsGrid = document.getElementById('dsGrid');
+            dsGrid.innerHTML = dsProjects.map(project => `
+                <div class="ds-card">
+                    <div class="ds-badge">${project.platform}</div>
+                    <h3 class="ds-title">${project.title}</h3>
+                    <p class="ds-tool">${project.tool}</p>
+                    <a href="${project.link}" class="ds-link" target="_blank" rel="noopener noreferrer">
+                        ${t.viewNotebook}
+                    </a>
+                </div>
+            `).join('');
+        }
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Initial Render
+        renderProjects();
+    </script>
+</body>
+</html>
