@@ -50,10 +50,8 @@
             <div class="profile-wrapper">
                 <div class="profile-bg"></div>
                 <div class="profile-frame">
-            
-                    <img src="./assets/light-trees.png" alt="Franklin Felix" class="profile-picture">
-                    
-                    <div class="profile-placeholder">👨‍💻</div>
+                    <!-- Updated: Use placeholder image or correct path -->
+                    <img src="./assets/profile.jpg" alt="Franklin Felix" class="profile-picture">
                 </div>
                 <div class="floating-badge badge-1" data-lang="badge1">Full Stack</div>
                 <div class="floating-badge badge-2" data-lang="badge2">Data Science</div>
@@ -157,27 +155,27 @@
             }
         };
 
-        // Projects Data
+        // Projects Data - Fixed: All projects now use 'img' property consistently
         const projects = [
             {
                 title: "Employee Management System",
                 desc: "A comprehensive CRUD application built with C# WinForms for managing employee records, departments, and organizational data.",
-                icon: "🏢",
+                img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
                 link: "#",
                 tools: ["C#", "WinForms", "SQL Server"]
             },
             {
-                title: "Cinema API",
-                desc: "RESTful API built with Next.js enabling movie ticket bookings with integrated Stripe payment processing.",
-                icon: "🎬",
-                link: "",
-                tools: ["Next.js", "Stripe", "Node.js"]
+                title: "Cinema API", 
+                desc: "HTML CSS and Javascript API project that let's you search any movie", 
+                img: "./assets/cinema.png", 
+                link: "https://movies-api-lkm.netlify.app/",
+                tools: ["HMTL", "CSS", "Javascript"]
             },
             {
-                title: "E-Commerce Platform",
-                desc: "Full-stack e-commerce solution with product catalog, shopping cart, and secure payment integration using Stripe.",
-                icon: "🛒",
-                link: "#",
+                title: "Personal Finance App", 
+                desc: "Next.js NextAuth", 
+                img: "./assets/personal.png", 
+                link: "https://personal-finance-app-l748.vercel.app/",
                 tools: ["Next.js", "React", "Stripe", "MongoDB"]
             }
         ];
@@ -244,7 +242,9 @@
             const projectsGrid = document.getElementById('projectsGrid');
             projectsGrid.innerHTML = projects.map(project => `
                 <div class="project-card">
-                    <div class="project-icon">${project.icon}</div>
+                    <div class="project-image">
+                        <img src="${project.img}" alt="${project.title}">
+                    </div>
                     <div class="project-content">
                         <h3 class="project-title">${project.title}</h3>
                         <p class="project-desc">${project.desc}</p>
